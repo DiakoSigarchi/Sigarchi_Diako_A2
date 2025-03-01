@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nassau Gallery</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+    <link rel="icon" href="images/The Bahamas.avif">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="things-to-do.html">Things to Do</a>
+            <a href="bonus.html">Local Cuisine</a>
+        </nav>
+    </header>
+    <section class="gallery">
+        <h1>Gallery of Nassau</h1>
+
+        <!-- Magic Carpet Section -->
+        <div class="magic-carpet">
+            <div class="scroll-container">
+                <img src="Images/Nassau Street View.jpg" alt="Nassau Street View">
+                <img src="Images/Nassau beaches 2.webp" alt="Nassau Beach">
+                <img src="Images/Nassau Market.webp" alt="Nassau Market">
+                <img src="Images/Nassau Sunset.jpg" alt="Nassau Sunset">
+                <img src="Images/Nassau Harbor.jpg" alt="Nassau Harbor">
+                <img src="Images/Nassau Coral Reef.jpg" alt="Nassau Coral Reef">
+                <!-- Duplicate images for seamless scrolling -->
+                <img src="Images/Nassau Street View 2.jpg" alt="Nassau Street View">
+                <img src="Images/Nassau beaches 3.webp" alt="Nassau Beach">
+                <img src="Images/Nassau Market 2.webp" alt="Nassau Market">
+                <img src="Images/Nassau Sunset 2.jpg" alt="Nassau Sunset">
+                <img src="Images/Nassau Harbor 2.jpg" alt="Nassau Harbor">
+                <img src="Images/Nassau Coral Reef 2.jpg" alt="Nassau Coral Reef">
+            </div>
+        </div>
+
+        <!-- Photo Grid Section -->
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="Images/Nassau Street View.jpg" alt="Nassau Street View" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau beaches 2.webp" alt="Nassau Beach" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Market.webp" alt="Nassau Market" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Sunset.jpg" alt="Nassau Sunset" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Harbor.jpg" alt="Nassau Harbor" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Coral Reef.jpg" alt="Nassau Coral Reef" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Street View 2.jpg" alt="Nassau Street View" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau beaches 3.webp" alt="Nassau Beach" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Market 2.webp" alt="Nassau Market" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Sunset 2.jpg" alt="Nassau Sunset" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Harbor 2.jpg" alt="Nassau Harbor" data-expanded="false">
+            </div>
+            <div class="photo-item">
+                <img src="Images/Nassau Coral Reef 2.jpg" alt="Nassau Coral Reef" data-expanded="false">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Explore Nassau. All rights reserved.</p>
+    </footer>
+    <script>
+        // Get all photo items
+        const photoItems = document.querySelectorAll('.photo-item');
+    
+        // Add click event listener to each photo item
+        photoItems.forEach(item => 
+        {
+            item.addEventListener('click', () => 
+            {
+                const img = item.querySelector('img');
+                const isExpanded = img.getAttribute('data-expanded') === 'true';
+    
+                if (isExpanded) 
+                {
+                    // Collapse the image
+                    item.classList.remove('expanded');
+                    img.setAttribute('data-expanded', 'false');
+                } 
+                else 
+                {
+                    // Expand the image
+                    item.classList.add('expanded');
+                    img.setAttribute('data-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
